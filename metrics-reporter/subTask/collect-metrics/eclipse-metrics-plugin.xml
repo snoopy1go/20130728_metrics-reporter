@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="tools" default="build" basedir="../../work">
+    <target name="build">
+      <delete dir="${basedir}" includes="*.xml"/>
+      <eclipse.refreshLocal resource="tools" depth="infinite"/>
+      <metrics.enable projectName="tools"/>
+      <eclipse.build
+        ProjectName="tools"
+        BuildType="full"
+        errorOut="errors.xml"
+        errorFormat="xml"
+        failOnError="true"/>
+      <metrics.export
+        projectName="tools"
+        file="metrics-result.xml"/>
+    </target>
+</project>
